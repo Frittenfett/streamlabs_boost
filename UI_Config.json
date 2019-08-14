@@ -1,0 +1,134 @@
+﻿{
+    "output_file": "settings.json",
+
+    "boostSound": {
+        "type": "textbox",
+        "value": "boost.wav",
+        "label": "Boost Sound Filename",
+        "tooltip": "Boost Sound File Name. Leave empty to disable. File has to be inside plugin itself!",
+        "group": "General"
+    },
+    "boostSoundVolume": {
+        "type": "slider",
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "ticks": 0.1,
+        "label": "Sound volumne",
+        "tooltip": "",
+        "group": "General"
+    },
+    "userCooldown": {
+        "type": "numberbox",
+        "value": 3600,
+        "label": "User Cooldown",
+        "tooltip": "User Cooldown",
+        "group": "General"
+    },
+    "globalCoolDown": {
+        "type": "numberbox",
+        "value": 800,
+        "label": "Global Cooldown",
+        "tooltip": "Global Cooldown",
+        "group": "General"
+    },
+    "command": {
+        "type": "textbox",
+        "value": "!boostticket",
+        "label": "Boost Ticket Command",
+        "tooltip": "Command for everyone to use a ticket. Default !boostticket",
+        "group": "Commands"
+    },
+    "commandTicket": {
+        "type": "textbox",
+        "value": "!tickets",
+        "label": "Tickets command",
+        "tooltip": "Command for user to show how many tickets they have. Default !tickets",
+        "group": "Commands"
+    },
+    "commandAdd": {
+        "type": "textbox",
+        "value": "!addTicket",
+        "label": "Add Ticket command",
+        "tooltip": "Command for Caster to add tickets from user. Default !addTicket",
+        "group": "Commands"
+    },
+    "commandRemove": {
+        "type": "textbox",
+        "value": "!removeTicket",
+        "label": "Remove Ticket command",
+        "tooltip": "Command for Caster to remove tickets from user. Default !removeTicket",
+        "group": "Commands"
+    },
+    "commandTransfer": {
+        "type": "textbox",
+        "value": "!transferTicket",
+        "label": "Transfer Ticket command",
+        "tooltip": "Command for user to transfer a ticket to another user. Default !transferTicket",
+        "group": "Commands"
+    },
+
+    "languageBoost": {
+        "type": "textbox",
+        "value": "{0} ueberspringt mit seinem/Ihrem Level die Queue PogChamp",
+        "label": "languageBoost",
+        "tooltip": "",
+        "group": "Language"
+    },
+    "languageAddTicket": {
+        "type": "textbox",
+        "value": "{0} hat ein Boostticket bekommen und besitzt nun {1} davon!",
+        "label": "languageAddTicket",
+        "tooltip": "",
+        "group": "Language"
+    },
+    "languageTickets": {
+        "type": "textbox",
+        "value": "{0} hat noch {1} Boosttickets!",
+        "label": "languageTickets",
+        "tooltip": "",
+        "group": "Language"
+    },
+    "languageRemoveTicket": {
+        "type": "textbox",
+        "value": "{0} wurde ein Boostticket entfernt und besitzt nun {1} davon!",
+        "label": "languageRemoveTicket",
+        "tooltip": "",
+        "group": "Language"
+    },
+    "languageTransferTicket": {
+        "type": "textbox",
+        "value": "{0} uebergibt {1} ein Boostticket!",
+        "label": "languageTransferTicket",
+        "tooltip": "",
+        "group": "Language"
+    },
+    "languageErrorNoTicket": {
+        "type": "textbox",
+        "value": "{0} du hast leider keine Boosttickets mehr!",
+        "label": "languageErrorNoTicket",
+        "tooltip": "",
+        "group": "Language"
+    },
+    "languageErrorSyntaxTransfer": {
+        "type": "textbox",
+        "value": "Falsche Syntax! Bitte nutze '{0} targetUserName'",
+        "label": "languageErrorSyntaxTransfer",
+        "tooltip": "",
+        "group": "Language"
+    ,
+    "languageErrorUserCooldown": {
+        "type": "textbox",
+        "value": "{0} du musst leider noch mindestens {1} Sekunden warten (User Cooldown).",
+        "label": "languageErrorUserCooldown",
+        "tooltip": "",
+        "group": "Language"
+    },
+    "languageErrorGlobalCooldown": {
+        "type": "textbox",
+        "value": "{0} du musst leider noch mindestens {1} Sekunden warten (Global Cooldown).",
+        "label": "languageErrorGlobalCooldown",
+        "tooltip": "",
+        "group": "Language"
+    }
+}
