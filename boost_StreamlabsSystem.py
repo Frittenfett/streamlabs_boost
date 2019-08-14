@@ -68,7 +68,7 @@ def Execute(data):
     global settings, boostData
     if data.IsChatMessage():
         user = data.User
-        username = Parent.GetDisplayName(user)
+        username = Parent.GetDisplayName(user).lower()
 
         if (data.GetParam(0).lower() == settings["command"]):
             if username not in boostData:
@@ -100,14 +100,14 @@ def Execute(data):
                 boostData[username] = 0
             Parent.SendTwitchMessage(settings["languageTickets"].format(username, boostData[username]))
         elif (data.GetParam(0) == settings["commandAdd"] and Parent.HasPermission(user, "Caster", "")):
-            toUser = str(data.GetParam(1))
+            toUser = str(data.GetParam(1)).lower()
             if toUser not in boostData:
                 boostData[toUser] = 0
             boostData[toUser] = boostData[toUser] + 1
             SetData()
             Parent.SendTwitchMessage(settings["languageAddTicket"].format(toUser, boostData[toUser]))
         elif (data.GetParam(0) == settings["commandRemove"] and Parent.HasPermission(user, "Caster", "")):
-            toUser = str(data.GetParam(1))
+            toUser = str(data.GetParam(1)).lower()
             if toUser not in boostData:
                 boostData[toUser] = 0
             if boostData[toUser] > 0:
@@ -115,7 +115,7 @@ def Execute(data):
             SetData()
             Parent.SendTwitchMessage(settings["languageRemoveTicket"].format(toUser, boostData[toUser]))
         elif (data.GetParam(0) == settings["commandTransfer"]):
-            toUser = str(data.GetParam(1))
+            toUser = str(data.GetParam(1)).lower()
             if toUser == "":
                 Parent.SendTwitchMessage(settings["languageErrorSyntaxTransfer"].format(settings["commandTransfer"]))
                 return
@@ -145,6 +145,6 @@ def SetData():
     global settings, boostData
     datafile = os.path.join(os.path.dirname(__file__), "data.json")
     file = open(datafile, "w")
-    file.write(str(boostData))
+    file.write(json.dumps(boostData))
     file.close()
     return
