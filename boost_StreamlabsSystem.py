@@ -100,14 +100,14 @@ def Execute(data):
                 boostData[username] = 0
             Parent.SendTwitchMessage(settings["languageTickets"].format(username, boostData[username]))
         elif (data.GetParam(0) == settings["commandAdd"] and Parent.HasPermission(user, "Caster", "")):
-            toUser = str(data.GetParam(1)).lower()
+            toUser = str(data.GetParam(1)).lower().replace('@', '')
             if toUser not in boostData:
                 boostData[toUser] = 0
             boostData[toUser] = boostData[toUser] + 1
             SetData()
             Parent.SendTwitchMessage(settings["languageAddTicket"].format(toUser, boostData[toUser]))
         elif (data.GetParam(0) == settings["commandRemove"] and Parent.HasPermission(user, "Caster", "")):
-            toUser = str(data.GetParam(1)).lower()
+            toUser = str(data.GetParam(1)).lower().replace('@', '')
             if toUser not in boostData:
                 boostData[toUser] = 0
             if boostData[toUser] > 0:
@@ -115,7 +115,7 @@ def Execute(data):
             SetData()
             Parent.SendTwitchMessage(settings["languageRemoveTicket"].format(toUser, boostData[toUser]))
         elif (data.GetParam(0) == settings["commandTransfer"]):
-            toUser = str(data.GetParam(1)).lower()
+            toUser = str(data.GetParam(1)).lower().replace('@', '')
             if toUser == "":
                 Parent.SendTwitchMessage(settings["languageErrorSyntaxTransfer"].format(settings["commandTransfer"]))
                 return
